@@ -1,41 +1,72 @@
 {% load cms_tags menu_tags sekizai_tags %}
-<!doctype html>
-<html>
-    <head>
-        <title>{% block title %}This is my new project home page{% endblock title %}</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <style type="text/css">
-            .nav {
-                padding-left: 0;
-            }
-            .nav li {
-                display: inline;
-                list-style-type: none;
-                padding-right: 20px;
-            }
-            .container {
-                width: 940px;
-                margin: 0 auto
-            }
-            .content {
-                float: left;
-                width: 80%;
-            }
-            .sidebar {
-                float: left;
-                width: 20%;
-            }
-        </style>
-        {% render_block "css" %}
-    </head>
-    <body>
-        {% cms_toolbar %}
-        <div class="container">
-            <ul class="nav">
-                {% show_menu 0 100 100 100 %}
-            </ul>
-            {% block content %}{% endblock content %}
-        </div>
-        {% render_block "js" %}
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}Сайт Алексея Кутепова{% endblock title %}</title>
+
+
+    {% render_block "css" %}
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+{% cms_toolbar %}
+
+
+<a href="/">Savitski</a>
+
+{% block header %}
+
+    <h1>{% placeholder "title" %}</h1>
+
+    <h3>{% placeholder "sub_title" %}</h3>
+
+{% endblock header %}
+
+<!-- Main Content -->
+
+{% block content %}{% endblock content %}
+
+
+<hr>
+
+<!-- Footer -->
+
+<ul>
+    <li>
+        <a href="https://twitter.com">
+            <h4>twi</h4>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.facebook.com">
+            <h4>FB</h4>
+        </a>
+    </li>
+    <li>
+        <a href="https://github.com">
+            <h4>git</h4>
+        </a>
+    </li>
+</ul>
+<p>Copyright &copy; {% static_placeholder "copyright" %}</p>
+
+
+{% render_block "js" %}
+</body>
 </html>
