@@ -1,0 +1,11 @@
+{% extends 'application/base.html' %}
+
+{% block offer_content %}
+<h1>{{ offer.title }}</h1>
+    <h2>{{ offer.location.city }}</h2>
+    <h3>{{ offer.person.position }} {{ offer.person.surname }}, {{ offer.person.phone_number }}</h3>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+
+{% endblock %}

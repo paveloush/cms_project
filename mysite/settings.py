@@ -138,7 +138,9 @@ INSTALLED_APPS = (
     'djangocms_snippet',
     'djangocms_googlemap',
     'djangocms_video',
-    'mysite'
+    'mysite',
+    'offers_cms_integration.apps.OffersCmsIntegrationConfig',
+    'application.apps.ApplicationConfig',
 )
 
 LANGUAGES = (

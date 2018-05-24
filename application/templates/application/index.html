@@ -1,0 +1,14 @@
+{% extends 'application/base.html' %}
+
+{% block offers_content %}
+<h1>Offers</h1>
+{% if offers_list %}
+    <ul>
+    {% for offer in offers_list %}
+		<li><a href="{% url 'offers:detail' offer.id %}">{{ offer.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No offers are available.</p>
+{% endif %}
+{% endblock %}
